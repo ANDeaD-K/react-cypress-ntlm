@@ -51,7 +51,9 @@
     "start": "node scripts/start.js",
     "cypress": "./node_modules/.bin/cypress open",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "ntlm-proxy": "start /min \"ntlm-proxy\" cmd /c node_modules\\.bin\\ntlm-proxy",
+    "cypress-ntlm": "npm run ntlm-proxy && cypress-ntlm open && ntlm-proxy-exit"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -96,6 +98,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "cypress": "^3.1.0"
+    "cypress": "^3.1.0",
+    "cypress-ntlm-auth": "^0.9.2"
   }
 }
